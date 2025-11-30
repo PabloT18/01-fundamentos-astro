@@ -1,16 +1,46 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Inicio - Mi Sitio Astro">
+	<h1>Bienvenido a Astro</h1>
+	<p>
+		Este es un proyecto de fundamentos de Astro. Astro es un framework
+		moderno para construir sitios web rápidos.
+	</p>
+
+	<section>
+		<h2>Características principales</h2>
+		<ul>
+			<li>🏝️ Islands Architecture</li>
+			<li>⚡ Zero JavaScript por defecto</li>
+			<li>🧩 Multi-framework</li>
+			<li>📦 Optimización automática</li>
+		</ul>
+	</section>
+</BaseLayout>
+
+<style>
+	h1 {
+		color: #2563eb;
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	section {
+		background: #f8fafc;
+		padding: 2rem;
+		border-radius: 8px;
+		margin-top: 2rem;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	li {
+		padding: 0.5rem 0;
+		font-size: 1.1rem;
+	}
+</style>

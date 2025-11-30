@@ -1,0 +1,168 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+interface Persona {
+    nombre: string;
+    apellido: string;
+    edad: number;
+    profesion: string;
+    email: string;
+    hobbies: string[];
+}
+
+const miPerfil: Persona = {
+    nombre: "Juan",
+    apellido: "Pérez",
+    edad: 25,
+    profesion: "Desarrollador Web",
+    email: "juan.perez@example.com",
+    hobbies: ["Programación", "Lectura", "Deportes", "Música"],
+};
+---
+
+<BaseLayout title="Mi Perfil" description="Página de perfil personal">
+    <article class="perfil-container">
+        <div class="perfil-header">
+            <div class="avatar">
+                {miPerfil.nombre.charAt(0)}{miPerfil.apellido.charAt(0)}
+            </div>
+            <div class="perfil-info">
+                <h1>{miPerfil.nombre} {miPerfil.apellido}</h1>
+                <p class="profesion">{miPerfil.profesion}</p>
+            </div>
+        </div>
+
+        <section class="perfil-detalles">
+            <h2>Información Personal</h2>
+            <dl>
+                <dt>Edad:</dt>
+                <dd>{miPerfil.edad} años</dd>
+
+                <dt>Email:</dt>
+                <dd>{miPerfil.email}</dd>
+
+                <dt>Profesión:</dt>
+                <dd>{miPerfil.profesion}</dd>
+            </dl>
+        </section>
+
+        <section class="perfil-hobbies">
+            <h2>Hobbies e Intereses</h2>
+            <ul>
+                {miPerfil.hobbies.map((hobby) => <li>{hobby}</li>)}
+            </ul>
+        </section>
+
+        <section class="perfil-bio">
+            <h2>Sobre mí</h2>
+            <p>
+                Soy un desarrollador web apasionado por crear experiencias
+                digitales increíbles. Me encanta aprender nuevas tecnologías y
+                compartir conocimientos con la comunidad.
+            </p>
+        </section>
+    </article>
+</BaseLayout>
+
+<style>
+    .perfil-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .perfil-header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        color: white;
+        margin-bottom: 2rem;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .perfil-info h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .profesion {
+        margin: 0.5rem 0 0;
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    .perfil-detalles,
+    .perfil-hobbies,
+    .perfil-bio {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        color: #2563eb;
+        margin-top: 0;
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 0.5rem;
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 1rem;
+    }
+
+    dt {
+        font-weight: 600;
+        color: #64748b;
+    }
+
+    dd {
+        margin: 0;
+    }
+
+    .perfil-hobbies ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .perfil-hobbies li {
+        background: #f1f5f9;
+        padding: 1rem;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: 500;
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+    }
+
+    .perfil-hobbies li:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .perfil-bio p {
+        line-height: 1.8;
+        color: #475569;
+    }
+</style>

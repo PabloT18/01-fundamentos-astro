@@ -1,0 +1,90 @@
+---
+import Card from "../components/card.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Acerca de - Mi Sitio Astro">
+    <h1>Acerca de este Proyecto</h1>
+
+    <section class="about-content">
+        <h2>¿Qué es Astro?</h2>
+        <p>
+            Astro es un framework web moderno que se enfoca en velocidad y
+            rendimiento. A diferencia de otros frameworks, Astro envía cero
+            JavaScript por defecto, cargando solo lo necesario cuando es
+            requerido.
+        </p>
+
+        <div class="cards-grid">
+            <Card
+                title="Islands Architecture"
+                description="Arquitectura de islas que permite cargar JavaScript solo donde es necesario, manteniendo el resto del sitio como HTML estático."
+            />
+            <Card
+                title="Zero JavaScript"
+                description="Por defecto, Astro no envía JavaScript al navegador. Solo se carga cuando explícitamente lo necesitas para interactividad."
+            />
+            <Card
+                title="Multi-Framework"
+                description="Usa React, Vue, Svelte, Solid o cualquier otro framework en el mismo proyecto. Elige el mejor para cada componente."
+            />
+            <Card
+                title="Optimización Automática"
+                description="Astro optimiza automáticamente imágenes, CSS y JavaScript para obtener el mejor rendimiento sin configuración extra."
+                link="https://docs.astro.build"
+            />
+        </div>
+        <h2>Ventajas de Astro</h2>
+        <ul>
+            <li>
+                <strong>Rendimiento excepcional:</strong> HTML estático por defecto
+            </li>
+            <li>
+                <strong>Flexibilidad:</strong> Usa React, Vue, Svelte o cualquier
+                framework
+            </li>
+            <li>
+                <strong>SEO optimizado:</strong> Renderizado del lado del servidor
+            </li>
+            <li>
+                <strong>Developer Experience:</strong> Hot module replacement y TypeScript
+            </li>
+        </ul>
+
+        <h2>Este Proyecto</h2>
+        <p>
+            Este proyecto demuestra los fundamentos de Astro, incluyendo:
+            componentes, layouts, páginas, enrutamiento y estilos.
+        </p>
+    </section>
+</BaseLayout>
+
+<style>
+    .about-content {
+        line-height: 1.8;
+    }
+
+    h1 {
+        color: #2563eb;
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        color: #1e293b;
+        margin-top: 2rem;
+    }
+
+    ul {
+        background: #f8fafc;
+        padding: 2rem;
+        border-radius: 8px;
+    }
+
+    li {
+        margin: 1rem 0;
+    }
+
+    strong {
+        color: #2563eb;
+    }
+</style>

@@ -1,0 +1,58 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    link?: string;
+}
+
+const { title, description, link } = Astro.props;
+---
+
+<div class="card">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    {
+        link && (
+            <a href={link} class="card-link">
+                Ver más →
+            </a>
+        )
+    }
+</div>
+
+<style>
+    .card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+        margin: 0 0 0.5rem;
+        color: #1e293b;
+    }
+
+    p {
+        color: #64748b;
+        margin: 0 0 1rem;
+    }
+
+    .card-link {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .card-link:hover {
+        text-decoration: underline;
+    }
+</style>
